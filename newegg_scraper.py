@@ -1,6 +1,6 @@
 
 """
-Title: Newegg Graphics Card Scraper (Multi-Page, Enhanced Metadata)
+Title: Newegg Graphics Card Scraper
 Author: Cyrus Macharia
 Date: 05/07/2025
 Description:
