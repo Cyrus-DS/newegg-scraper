@@ -1,78 +1,76 @@
-# newegg-scraper
 
-````markdown
-# 🛒 Newegg Graphics Card Scraper
+# Newegg Graphics Card Scraper
 
-This project is a simple web scraping script built using **Selenium** and **BeautifulSoup** to extract graphics card listings from [Newegg](https://www.newegg.com/). It fetches product names and prices from the search results and saves them into a CSV file.
+A Python-based web scraper that extracts graphics card listings from Newegg.com across multiple pages. Built with `Selenium` and `BeautifulSoup`, this script collects comprehensive product metadata including price, shipping, promotions, ratings, and stock availability.
 
----
 
-## 📌 Features
+## Features
 
-- Launches a Chrome browser using Selenium WebDriver
-- Loads Newegg's graphics card search page
-- Waits for page content to fully load
-- Parses the page using BeautifulSoup
+- Multi-page scraping (until the last page is reached)
 - Extracts:
-  - Product titles
-  - Current prices
-- Saves extracted data into a CSV file (`graphics_cards.csv`)
+  - Product Name
+  - Price
+  - Shipping Information
+  - Promotion/Discounts
+  - Ratings
+  - Stock Availability
+- Automatically saves data into a clean CSV file
 
----
+## Output
 
-## 🛠️ Requirements
+A file named `graphics_cards_detailed.csv` will be created in the working directory, containing the following columns:
 
-Before running the script, install the required libraries:
+- `Product Name`
+- `Price`
+- `Shipping`
+- `Promotion`
+- `Rating`
+- `Availability`
+
+## Requirements
+
+Ensure the following Python packages are installed:
 
 ```bash
 pip install selenium beautifulsoup4
-````
-
-Make sure you also have:
-
-* **Google Chrome** installed
-* **ChromeDriver** downloaded and the path updated in the script
-
----
-
-## 🚀 How to Run
-
-1. Clone or download this repository.
-2. Update the `CHROMEDRIVER_PATH` in the script to the actual location of your `chromedriver.exe`.
-
-```python
-CHROMEDRIVER_PATH = "D:\\Data Science\\Data Science\\Phoenix KE Analytics Case Study\\chromedriver.exe"
 ```
 
-3. Run the script in your Python environment:
+You must also download [ChromeDriver](https://sites.google.com/chromium.org/driver/) and update the `CHROMEDRIVER_PATH` variable in the script to match your system path.
+
+
+## Usage
+
+1. **Clone the repository** or copy the script to your local machine.
+2. **Edit the path** to your `chromedriver.exe` in the script:
+   ```python
+   CHROMEDRIVER_PATH = r"your/path/to/chromedriver.exe"
+   ```
+3. **Run the script:**
 
 ```bash
-python index.py
+python newegg_scraper.py
 ```
 
-4. After execution, you’ll see a CSV file (`graphics_cards.csv`) with the scraped data.
+4. The script will navigate Newegg’s GPU listings, collect data, and save it to `graphics_cards_detailed.csv`.
 
 ---
 
-## 📂 Output Sample
+## Notes
 
-The output CSV will have the following structure:
+- This scraper uses Selenium with Chrome WebDriver; ensure Chrome is installed.
+- Dynamic websites like Newegg may change structure over time, which could break the scraper.
+- Be mindful of scraping ethics and site terms of service.
 
-| Product Name                        | Price    |
-| ----------------------------------- | -------- |
-| MSI Ventus GeForce RTX 4070 Ti      | \$799.99 |
-| GIGABYTE GeForce RTX 3060 Gaming OC | \$299.99 |
-| ...                                 | ...      |
 
----
+## Author
 
-## 📌 Notes
+**Cyrus Macharia**  
+Date: July 5, 2025
 
-* Ensure that the Chrome browser version matches the version of ChromeDriver.
-* You may need to adjust the wait time (`time.sleep(5)`) depending on your internet speed and Newegg's page load time.
 
----
+## License
 
-## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
+```
 
-This project is for educational purposes and not affiliated with Newegg. Please respect the website's `robots.txt` and terms of service
+
