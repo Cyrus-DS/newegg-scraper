@@ -71,6 +71,3 @@ Date: July 5, 2025
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-```
-
-
